@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (urlMapping()) {
+      <div>
+        <h2 data-cy="urlMappingDetailsHeading"><span>Url Mapping</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ urlMapping()!.id }}</span>
+          </dd>
+          <dt><span>Original Url</span></dt>
+          <dd>
+            <span>{{ urlMapping()!.originalUrl }}</span>
+          </dd>
+          <dt><span>Ttl</span></dt>
+          <dd>
+            <span>{{ urlMapping()!.ttl }}</span>
+          </dd>
+          <dt><span>Creation Timestamp</span></dt>
+          <dd>
+            <span>{{ urlMapping()!.creationTimestamp | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/url-mapping', urlMapping()!.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

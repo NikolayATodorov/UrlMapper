@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20241031081155"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "originalUrl",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "ttl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "creationTimestamp",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "UrlMapping",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
